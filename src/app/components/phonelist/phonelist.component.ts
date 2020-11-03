@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Phone } from './phone'
+import { Phone } from './phone';
+import { PHONES } from './mockphonelist';
 
 
 @Component({
@@ -9,17 +10,34 @@ import { Phone } from './phone'
 })
 export class PhonelistComponent implements OnInit {
 
-  counter = 0
   phone: Phone = {
-    price: 100,
-    name: 'iPhone',
-    os: 'ios',
-    imageUrl: 'https://picsum.photos/300/300'
+    price: 0,
+    name: '',
+    os: '',
+    imageUrl: ''
   }
+  
+  phoneList = PHONES;
+
   constructor() { }
+
   ngOnInit(): void {
   }
-  increment() {
-    this.counter++
+
+  createLogo(os) {
+    return `../assets/${os}.png`;
+  }
+
+  save() {
+    const tempPhone: Phone = { ...this.phone }
+    this.phoneList.unshift(tempPhone)
+  }
+
+  delete(phone: Phone) {
+    this.phoneList.forEach((item, index) => {
+      if (item === phone) {
+        this.phoneList.splice(index, 1)
+      }
+    })
   }
 }

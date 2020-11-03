@@ -1,12 +1,39 @@
 <div class="phone-container">
-    <div class="phone">
+    <div class="input-form">
+        NAME:
+        <input [(ngModel)]="phone.name" placeholder="name" type="text">
+        PRICE:
+        <input [(ngModel)]="phone.price" placeholder="price" type="text">
+        IMAGE:
+        <input [(ngModel)]="phone.imageUrl" placeholder="imageUrl" type="text">
+        <div class="radio-btns">
+            OS:
+            <li>
+                <input type="radio" name="os" id="android" [(ngModel)]="phone.os" value="android">
+                <label for="android">ANDROID</label>
+            </li>
+            <li>
+                <input type="radio" name="os" id="ios" [(ngModel)]="phone.os" value="ios">
+                <label for="ios">IOS</label>
+            </li>
+            <li>
+                <input type="radio" name="os" id="black" [(ngModel)]="phone.os" value="black">
+                <label for="black">BLACK</label>
+            </li>
+
+            <!-- the above can be made into list using ngFor -->
+        </div>
+        <button class="btn btn-primary" (click)="save()">ADD</button>
+    </div>
+    <div class="phone" *ngFor="let phone of phoneList">
         <img class="image" [src]="phone.imageUrl" alt="">
         <div class="details">
             <p class="name">{{phone.name}}</p>
-            <p class="price">{{phone.price}}</p>
-            <p class="os">{{phone.os}}</p>
-            <p>{{counter}}</p>
-            <button (click)="increment()">CLICK ME</button>
+            <p class="price">${{phone.price}}</p>
+            <img class="os" [src]="createLogo(phone.os)" alt="">
+            <p *ngIf="phone.price > 350">SALE</p>
+            <button class="btn btn-danger" (click)="delete(phone)">DELETE</button>
         </div>
+       
     </div>
 </div>
