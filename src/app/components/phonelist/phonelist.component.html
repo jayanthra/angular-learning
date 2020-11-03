@@ -1,0 +1,12 @@
+<div class="phone-container">
+    <div class="phone">
+        <img class="image" [src]="phone.imageUrl" alt="">
+        <div class="details">
+            <p class="name">{{phone.name}}</p>
+            <p class="price">{{phone.price}}</p>
+            <p class="os">{{phone.os}}</p>
+            <p>{{counter}}</p>
+            <button (click)="increment()">CLICK ME</button>
+        </div>
+    </div>
+</div>

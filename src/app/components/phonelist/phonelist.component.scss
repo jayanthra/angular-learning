@@ -1,0 +1,38 @@
+.phone-container {
+
+  margin-top: 60px;
+
+  .phone {
+    background: lightblue;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    padding: 12px;
+    border-radius: 5px;
+
+    .image {
+      height: 200px;
+    }
+
+    .details {
+      font-size: 15px;
+
+      .name {
+        color: red;
+        font-size: 24px;
+      }
+
+      .price {
+        color: blue;
+      }
+
+      .os {
+        color: green;
+      }
+
+      button {
+        background: white;
+      }
+    }
+  }
+}
