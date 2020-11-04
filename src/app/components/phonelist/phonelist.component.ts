@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Phone } from './phone';
-import { PHONES } from './mockphonelist';
+import { PhoneService } from 'src/app/services/phone.service';
 
 
 @Component({
@@ -8,36 +8,49 @@ import { PHONES } from './mockphonelist';
   templateUrl: './phonelist.component.html',
   styleUrls: ['./phonelist.component.scss']
 })
+
 export class PhonelistComponent implements OnInit {
 
   phone: Phone = {
     price: 0,
     name: '',
     os: '',
-    imageUrl: ''
-  }
-  
-  phoneList = PHONES;
+    imageUrl: '',
+    id: '',
+  };
 
-  constructor() { }
+  phoneList: Phone[];
+
+  constructor(private phoneservice: PhoneService) { }
 
   ngOnInit(): void {
+    this.getPhones();
   }
 
-  createLogo(os) {
+
+  getPhones(): void {
+    this.phoneList = this.phoneservice.getPhones();
+  }
+
+  createLogo(os): string {
     return `../assets/${os}.png`;
   }
 
-  save() {
+  save(): void {
+    this.phone.id = this.getRandomString()
     const tempPhone: Phone = { ...this.phone }
     this.phoneList.unshift(tempPhone)
   }
 
-  delete(phone: Phone) {
+  delete(phone: Phone): void {
     this.phoneList.forEach((item, index) => {
       if (item === phone) {
         this.phoneList.splice(index, 1)
       }
-    })
+    });
+  }
+
+  getRandomString(): string {
+    return Math.floor(Math.random() * Math.floor(30000)).toString()
   }
 }

@@ -7,13 +7,19 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PhonelistComponent } from './components/phonelist/phonelist.component';
 import { FormsModule } from '@angular/forms';
+import { PhonedetailsComponent } from './components/phonedetails/phonedetails.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    PhonelistComponent
+    PhonelistComponent,
+    PhonedetailsComponent,
+    AboutusComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,

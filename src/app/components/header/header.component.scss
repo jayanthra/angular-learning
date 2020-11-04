@@ -149,12 +149,14 @@
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color: yellow;
     text-decoration: none;
+    margin-right: 12px;
   }
 
   a:hover {
-    color: #125699;
+    color: white;
+    text-decoration: none;
   }
 
   .terminal {

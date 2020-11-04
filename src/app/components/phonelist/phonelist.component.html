@@ -1,5 +1,5 @@
 <div class="phone-container">
-    <div class="input-form">
+    <div class="input-form" *ngIf="false">
         NAME:
         <input [(ngModel)]="phone.name" placeholder="name" type="text">
         PRICE:
@@ -20,20 +20,23 @@
                 <input type="radio" name="os" id="black" [(ngModel)]="phone.os" value="black">
                 <label for="black">BLACK</label>
             </li>
-
-            <!-- the above can be made into list using ngFor -->
+            <!-- use ngfor for above -->
         </div>
         <button class="btn btn-primary" (click)="save()">ADD</button>
     </div>
     <div class="phone" *ngFor="let phone of phoneList">
-        <img class="image" [src]="phone.imageUrl" alt="">
-        <div class="details">
-            <p class="name">{{phone.name}}</p>
-            <p class="price">${{phone.price}}</p>
-            <img class="os" [src]="createLogo(phone.os)" alt="">
-            <p *ngIf="phone.price > 350">SALE</p>
-            <button class="btn btn-danger" (click)="delete(phone)">DELETE</button>
-        </div>
-       
+        <a routerLink="/phone/{{phone.id}}">
+            <div class="img-container">
+                <img class="image" [src]="phone.imageUrl" alt="">
+            </div>
+            <div class="details">
+                <p class="name">{{phone.name}}</p>
+                <p class="price">${{phone.price}}</p>
+                <p class="price">ID:{{phone.id}}</p>
+                <img class="os" [src]="createLogo(phone.os)" alt="">
+                <p *ngIf="phone.price > 350">SALE</p>
+                <button *ngIf="false" class="btn btn-danger" (click)="delete(phone)">DELETE</button>
+            </div>
+        </a>
     </div>
 </div>

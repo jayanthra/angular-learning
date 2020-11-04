@@ -3,4 +3,5 @@ export interface Phone {
     name: string;
     os: string;
     imageUrl: string;
+    id: string;
   }

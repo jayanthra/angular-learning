@@ -1,13 +1,12 @@
+@import '../../../variables.scss';
 .phone-container {
   .input-form {
-    border: 1px solid gray;
+    border: 1px solid $darkBlue;
     padding: 20px;
-
     input {
       display: block;
       margin-bottom: 12px;
     }
-
     .radio-btns {
       li {
         list-style: none;
@@ -16,44 +15,51 @@
       }
     }
   }
-
   .phone {
-    background: lightblue;
+    background: #D6E1E4;
     display: flex;
-    width: 300px;
+    width: 400px;
     padding: 12px;
     border-radius: 5px;
     margin-bottom: 12px;
-    position: relative;
-    .image {
-      height: 150px;
+    a {
+      display: flex;
+      width: 100%;
+      &:hover {
+        color: unset;
+        text-decoration: none;
+      }
     }
-
+    .img-container {
+      min-width: 130px;
+      .image {
+        height: 150px;
+      }
+    }
     .details {
       font-size: 15px;
       margin-left: 12px;
-      p {
-        margin: 0;
-      }
+      position: relative;
+      width: 100%;
       .name {
-        color: red;
+        color: $darkBlue;
         font-size: 24px;
       }
-
       .price {
-        color: blue;
+        color: $darkBlue;
       }
-
       .os {
         height: 20px;
       }
-
+      button {
+        height: 40px;
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+      }
     }
-
-    button {
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-    }
+  }
+  .phone:nth-child(even) {
+    background: $reddish;
   }
 }
