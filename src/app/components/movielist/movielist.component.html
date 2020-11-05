@@ -1,0 +1,16 @@
+<h2 *ngIf="isLoading">Loading...</h2>
+<div class="movie-list">
+    <div class="movie" *ngFor="let movie of movies">
+        <div class="link" routerLink="/movie/{{movie.imdbID}}">
+            <img class="image" [src]="movie.Poster" alt="">
+            <p class="name">{{movie.Title | slice:0:20}}</p>
+            <p class="year">{{movie.Year}}</p>
+            <button (click)="addtoWishList($event,movie)">ADD</button>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button [disabled]="pageNo === 1" (click)="paginate(-1)">PREVIOUS</button>
+    <button [disabled]="pageNo === 100" (click)="paginate(1)">NEXT</button>
+</div>

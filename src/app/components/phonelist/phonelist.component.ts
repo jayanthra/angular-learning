@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Phone } from './phone';
+import { Phone } from '../../interfaces/phone';
 import { PhoneService } from 'src/app/services/phone.service';
 
 
@@ -37,20 +37,25 @@ export class PhonelistComponent implements OnInit {
   }
 
   save(): void {
-    this.phone.id = this.getRandomString()
-    const tempPhone: Phone = { ...this.phone }
-    this.phoneList.unshift(tempPhone)
+    this.phone.id = this.getRandomString();
+    const tempPhone: Phone = { ...this.phone };
+    this.phoneList.unshift(tempPhone);
   }
 
   delete(phone: Phone): void {
     this.phoneList.forEach((item, index) => {
       if (item === phone) {
-        this.phoneList.splice(index, 1)
+        this.phoneList.splice(index, 1);
       }
     });
   }
 
   getRandomString(): string {
-    return Math.floor(Math.random() * Math.floor(30000)).toString()
+    return Math.floor(Math.random() * Math.floor(30000)).toString();
+  }
+
+  hello(event: MouseEvent): void {
+    alert('hello')
+    event.stopPropagation()
   }
 }

@@ -25,7 +25,7 @@
         <button class="btn btn-primary" (click)="save()">ADD</button>
     </div>
     <div class="phone" *ngFor="let phone of phoneList">
-        <a routerLink="/phone/{{phone.id}}">
+        <div class="link" [routerLink]="['/phone/',phone.id]" >
             <div class="img-container">
                 <img class="image" [src]="phone.imageUrl" alt="">
             </div>
@@ -37,6 +37,6 @@
                 <p *ngIf="phone.price > 350">SALE</p>
                 <button *ngIf="false" class="btn btn-danger" (click)="delete(phone)">DELETE</button>
             </div>
-        </a>
+        </div>
     </div>
 </div>

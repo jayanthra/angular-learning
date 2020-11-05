@@ -1,0 +1,36 @@
+.movie-list {
+    .movie {
+        border: 1px solid blue;
+        margin:12px;
+        width: 150px;
+        padding: 2px;
+        border-radius: 5px;
+        display: inline-flex;
+        height: 289px;
+        .link {
+            cursor: pointer;
+            position: relative;
+            img {
+                width: 140px;
+                height: 200px;
+            }
+            p {
+                margin: 0;
+            }
+
+            .name {
+                font-weight: bold;
+            }
+
+            .year {
+                font-size: 14px;
+            }
+
+            button {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+}

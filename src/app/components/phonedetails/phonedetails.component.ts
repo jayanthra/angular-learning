@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PhoneService } from 'src/app/services/phone.service';
-import { Phone } from '../phonelist/phone';
+import { Phone } from '../../interfaces/phone';
 
 @Component({
   selector: 'app-phonedetails',
@@ -23,5 +23,4 @@ export class PhonedetailsComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('phoneid');
     this.phone = this.phoneService.getPhone(id);
   }
-
 }

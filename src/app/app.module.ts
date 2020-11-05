@@ -3,28 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PhonelistComponent } from './components/phonelist/phonelist.component';
 import { FormsModule } from '@angular/forms';
 import { PhonedetailsComponent } from './components/phonedetails/phonedetails.component';
-import { AboutusComponent } from './components/aboutus/aboutus.component';
-import { ContactusComponent } from './components/contactus/contactus.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MovielistComponent } from './components/movielist/movielist.component';
+import { MoviedetailsComponent } from './components/moviedetails/moviedetails.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     HeaderComponent,
     PhonelistComponent,
     PhonedetailsComponent,
-    AboutusComponent,
-    ContactusComponent
+    MovielistComponent,
+    MoviedetailsComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

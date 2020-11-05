@@ -1,4 +1,4 @@
-import { Phone } from './phone';
+import { Phone } from '../../interfaces/phone';
 export const PHONES: Phone[] = [
   {
     id: '1231231',
@@ -42,4 +42,4 @@ export const PHONES: Phone[] = [
     os: 'black',
     imageUrl: 'https://m.media-amazon.com/images/I/61E4VecTQgL._AC_UY436_FMwebp_QL65_.jpg'
   },
-]
+];

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PHONES } from '../components/phonelist/mockphonelist';
-import { Phone } from '../components/phonelist/phone';
+import { Phone } from '../interfaces/phone';
 
 @Injectable({
   providedIn: 'root'

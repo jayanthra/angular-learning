@@ -1,1 +1,13 @@
-@import '~bootstrap/dist/css/bootstrap.min.css'
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+a {
+    text-decoration: none;
+    color: unset;
+
+    &.hover {
+        text-decoration: none;
+        color: unset;
+
+    }
+}
